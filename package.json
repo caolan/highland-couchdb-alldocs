@@ -1,0 +1,9 @@
+{
+  "name": "highland-couchdb-alldocs",
+  "version": "1.0.0",
+  "description": "Provides Highland streams for reading all keys/docs in a CouchDB database",
+  "dependencies": {
+    "highland": "^1.26.3",
+    "highland-couchr": "^1.1.0"
+  }
+}
