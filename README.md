@@ -14,20 +14,12 @@ alldocs.ids(db, 100).each(function (id) {
     console.log('ID: ' + id);
 });
 
-// return a stream of unresolved requests for all documents in db
-var docs = alldocs.docs(db);
-
-// you can then sequence these as you like using the Highland stream API...
-
-// fetch 10 docs at a time (still processing them in order)
-docs.parallel(10).map(...).each(...);
-
-// fetch docs in series
-docs.series().map(...).each(...);
+// return a stream of all documents in db, fetching 20 at a time
+var docs = alldocs.docs(db, 20);
 
 // you can also use Highlands error handling methods,
 // eg, stop processing on first request error:
-docs.series().stopOnError(function (err) {
+docs.stopOnError(function (err) {
     console.error('Something broke');
 });
 ```
